@@ -91,6 +91,21 @@ class LoginControllerTest {
         assertEquals(CodeConstants.AUTHENTICATED_USER, response.getData());
     }
 
+    @Test
+    void loginUserUserNoExist() throws Exception {
+        //Arrange
+        LoginDTO loginDTO = mapper.readValue(Util.readFile(Util.LOGIN_DTO), LoginDTO.class);
+        String requestJson = mapper.writeValueAsString(loginDTO);
+
+        doReturn(Optional.empty()).when(loginService).userAuthentication(any());
+
+
+        // Act && assert
+        mockMvc.perform(post(Util.LOGIN_PATH)
+                .contentType(APPLICATION_JSON).content(requestJson)).andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+
 
     @Test
     void loginUserBadRequest() throws Exception {

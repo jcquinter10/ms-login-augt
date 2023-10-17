@@ -113,6 +113,10 @@
 					<output>file</output>
 					<append>true</append>
 					<excludes>
+						<exclude>com/globant/dojo/msloginaugt/helper/**/*.class</exclude>
+						<exclude>com/globant/dojo/msloginaugt/model/**/*.class</exclude>
+						<exclude>com/globant/dojo/msloginaugt/infrastructure/**/*.class</exclude>
+						<exclude>com/globant/dojo/msloginaugt/exception/*.class</exclude>
 						<exclude>com/globant/dojo/msloginaugt/MsLoginAugtApplication.class</exclude>
 					</excludes>
 				</configuration>
