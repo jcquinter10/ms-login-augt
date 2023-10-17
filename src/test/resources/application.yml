@@ -1,0 +1,20 @@
+config:
+  swagger:
+    title: API (ms-login-augt)
+    description: This contract have the specifications of the dojo aug
+    terms: https://google.com
+    licence: apache 2.0
+    licenceUrl: https://google.com
+    version: 1.0
+    contact:
+      name: Globant
+      url: https://google.com
+      email: email@gmail.com
+
+security:
+  basic:
+    enabled: false
+
+api:
+  login:
+    url: api/v1/login
